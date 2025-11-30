@@ -1,0 +1,14 @@
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\bin\Debug\net9.0\pbogym.exe
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\bin\Debug\net9.0\pbogym.deps.json
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\bin\Debug\net9.0\pbogym.runtimeconfig.json
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\bin\Debug\net9.0\pbogym.dll
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\bin\Debug\net9.0\pbogym.pdb
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.GeneratedMSBuildEditorConfig.editorconfig
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.AssemblyInfoInputs.cache
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.AssemblyInfo.cs
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.csproj.CoreCompileInputs.cache
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.dll
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\refint\pbogym.dll
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.pdb
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.genruntimeconfig.cache
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\ref\pbogym.dll
