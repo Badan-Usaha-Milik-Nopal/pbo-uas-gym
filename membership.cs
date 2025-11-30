@@ -1,4 +1,4 @@
-// Class Membership (Parent dan Childnya = Inheritance) | Gold, Silver, dan Bronze
+// Class Membership (Parent dan Childnya = Inheritance dan Override) | Gold, Silver, dan Bronze
 
 public class Membership
     {
