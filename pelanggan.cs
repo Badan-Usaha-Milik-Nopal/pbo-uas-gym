@@ -1,9 +1,24 @@
 // Data user - class member
 class Pelanggan()
 {
-    public required string nama;
-    public int Id;
-    public required string password; 
+    public string username;
+    public string password;
+    public string fullName;
+    public Membership membershipPlan;
+    public int durasiLangganan;
+    public int loker;
+
+        // string name, 
+        public AkunPelanggan(string user, string pw, Membership plan, int durasi, int lokNum)
+    {
+        username = user;
+        password = pw;
+        membershipPlan = plan;
+        durasiLangganan = durasi;
+        loker = lokNum;
+    }
 }
+
+
 // Nama, membershipnya, lokernya
 
