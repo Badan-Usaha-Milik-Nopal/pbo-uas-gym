@@ -1,7 +1,9 @@
 // Data user - class member
 class Pelanggan()
 {
-    public virtual string nama; 
+    public required string nama;
+    public int Id;
+    public required string password; 
 }
 // Nama, membershipnya, lokernya
 
