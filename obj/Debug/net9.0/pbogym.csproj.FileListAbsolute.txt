@@ -12,3 +12,4 @@ D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis
 D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.pdb
 D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.genruntimeconfig.cache
 D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\ref\pbogym.dll
+D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.sourcelink.json
