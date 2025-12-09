@@ -1,6 +1,8 @@
 // Class Membership (Parent dan Childnya = Inheritance dan Override) | Gold, Silver, dan Bronze
 
-public class Membership
+namespace GymMembershipVirtual
+{
+    public class Membership
     {
         public virtual string GetName()
         {
@@ -33,7 +35,7 @@ public class Membership
 
         public override string GetBenefit()
         {
-            return "Berlangganan gym selama 6 bulan.";
+            return "Langganan gym selama 6 bulan.";
         }
     }
 
@@ -52,7 +54,7 @@ public class Membership
 
         public override string GetBenefit()
         {
-            return "Berlangganan gym selama 1 bulan.";
+            return "Langganan gym selama 1 bulan.";
         }
     }
 
@@ -71,6 +73,7 @@ public class Membership
 
         public override string GetBenefit()
         {
-            return "Berlangganan gym selama 1 minggu.";
+            return "Langganan gym selama 1 minggu.";
         }
     }
+}

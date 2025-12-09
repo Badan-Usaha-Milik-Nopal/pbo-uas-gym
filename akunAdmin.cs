@@ -1,13 +1,16 @@
 // class admin
-
-class AdminAccount
+namespace GymMembershipVirtual
 {
-    public string username;
-    public string password;
-
-    public AdminAccount(string uname, string pw)
+    class AdminAccount
     {
-        username = uname;
-        password = pw;
+        public string username;
+        public string password;
+
+        public AdminAccount(string uname, string pw)
+        {
+            username = uname;
+            password = pw;
+        }
     }
+    
 }
