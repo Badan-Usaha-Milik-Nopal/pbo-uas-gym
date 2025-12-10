@@ -6,7 +6,7 @@ namespace GymMembershipVirtual
 {
     class Program
     {
-        static MemberManager manager = new MemberManager();
+        static KelolaPelanggan manager = new KelolaPelanggan();
         static List<AdminAccount> admins = new List<AdminAccount> {
         new AdminAccount("admin", "admin123")
     };
@@ -47,8 +47,8 @@ namespace GymMembershipVirtual
         }
 
         // cek member
-        var mem = manager.FindByUsername(user);
-        if (mem != null && mem.Password == pass)
+        var mem = manager.cariUsername(user);
+        if (mem != null && mem.password == pass)
         {
             UserMenu(mem);
             return;
@@ -74,7 +74,7 @@ namespace GymMembershipVirtual
         string member = Console.ReadLine();
 
         // cek member
-        var mem = manager.FindByUsername(user);
+        var mem = manager.cariUsername(user);
         if (mem != null)
         {
             Console.WriteLine("Udah ada akun");
@@ -83,7 +83,7 @@ namespace GymMembershipVirtual
         if (member == "1")
         {
             int loker = new Random().Next(200, 300);
-            manager.Members.Add(new Pelanggan(user, pass, nama,
+            manager.Pelangganan.Add(new Pelanggan(user, pass, nama,
                 new GoldMembership(), 6, loker, true));
 
             Console.WriteLine($"\nLoker Gold kamu: {loker}");
@@ -91,14 +91,14 @@ namespace GymMembershipVirtual
         else if (member == "2")
         {
             int loker = new Random().Next(200, 300);   // Silver: auto random
-            manager.Members.Add(new Pelanggan(user, pass, nama,
+            manager.Pelangganan.Add(new Pelanggan(user, pass, nama,
                 new SilverMembership(), 3, loker, true));
 
             Console.WriteLine($"\nLoker Silver kamu: {loker}");
         }
         else if (member == "3")
         { 
-            manager.Members.Add(new Pelanggan (user, pass, nama,
+            manager.Pelangganan.Add(new Pelanggan (user, pass, nama,
                 new BronzeMembership(), 1, 0, true));
 
             Console.WriteLine("\nBronze tidak mendapatkan loker.");
@@ -127,7 +127,7 @@ namespace GymMembershipVirtual
 
             if (c == "A")
             {
-                manager.AddNewMember();
+                manager.tambahPelanggan();
                 Pause();
             }
 
@@ -135,19 +135,19 @@ namespace GymMembershipVirtual
             {
                 Console.Clear();
                 Console.WriteLine("== Daftar Member ==");
-                manager.PrintTableAll();
+                manager.PrintTabelSemua();
                 Pause();
             }
             else if (c == "C")
             {
                 Console.Write("Masukkan username member yang akan dihapus: ");
                 string u = Console.ReadLine();
-                var m = manager.FindByUsername(u);
+                var m = manager.cariUsername(u);
                 if (m == null) { Console.WriteLine("Member tidak ditemukan"); Pause(); continue; }
-                Console.Write($"Yakin hapus {m.FullName} ({m.Username})? (y/n): ");
+                Console.Write($"Yakin hapus {m.namaLengkap} ({m.username})? (y/n): ");
                 if (Console.ReadLine().ToLower() == "y")
                 {
-                    manager.DeleteMember(u);
+                    manager.hapusPelanggan(u);
                     Console.WriteLine("Member dihapus.");
                 }
                 else Console.WriteLine("Batal.");
@@ -156,30 +156,30 @@ namespace GymMembershipVirtual
             
             else if (c == "D")
             {
-                Console.WriteLine($"Total member: {manager.TotalMembers()}");
+                Console.WriteLine($"Total member: {manager.TotalPelanggan()}");
                 Pause();
             }
             else if (c == "E")
             {
                 Console.Write("Masukkan tipe (Gold/Silver/Bronze): ");
                 string tipe = Console.ReadLine();
-                var list = manager.GetByMembershipType(tipe);
+                var list = manager.cariTipeMembership(tipe);
                 if (list.Count == 0) { Console.WriteLine("Tidak ada member dengan tipe itu."); Pause(); continue; }
                 Console.WriteLine($"== Member Tipe {tipe} ==");
-                manager.PrintTableList(list);
+                manager.PrintTabelSatu(list);
                 Pause();
             }
             else if (c == "F")
             {
                 Console.Write("Masukkan username member: ");
                 string u = Console.ReadLine();
-                var m = manager.FindByUsername(u);
+                var m = manager.cariUsername(u);
                 if (m == null) { Console.WriteLine("Member tidak ditemukan"); Pause(); continue; }
-                Console.WriteLine($"Status saat ini: {(m.IsActive ? "Aktif" : "Expired")}");
+                Console.WriteLine($"Status saat ini: {(m.isAktif ? "Aktif" : "Expired")}");
                 Console.Write("Ganti status? (y/n): ");
                 if (Console.ReadLine().ToLower() == "y")
                 {
-                    manager.ToggleActive(u);
+                    manager.ToggleAktif(u);
                     Console.WriteLine("Status diubah.");
                 }
                 else Console.WriteLine("Batal.");
@@ -196,7 +196,7 @@ namespace GymMembershipVirtual
         while (true)
         {
             Console.Clear();
-            Console.WriteLine($"=== USER MENU (Selamat datang {member.FullName}) ===");
+            Console.WriteLine($"=== USER MENU (Selamat datang {member.namaLengkap}) ===");
             Console.WriteLine("1. Lihat Profil");
             Console.WriteLine("2. Lihat Benefit Membership");
             Console.WriteLine("3. Ubah Password");
@@ -208,32 +208,32 @@ namespace GymMembershipVirtual
             if (c == "1")
             {
                 Console.WriteLine("== Profil Anda ==");
-                Console.WriteLine($"Username : {member.Username}");
-                Console.WriteLine($"Nama     : {member.FullName}");
-                Console.WriteLine($"Membership: {member.MembershipPlan.GetName()}");
-                Console.WriteLine($"Durasi   : {member.DurationMonths} bulan");
-                Console.WriteLine($"Loker    : {(member.LockerNumber == 0 ? "-" : member.LockerNumber.ToString())}");
-                Console.WriteLine($"Status   : {(member.IsActive ? "Aktif" : "Expired")}");
+                Console.WriteLine($"Username : {member.username}");
+                Console.WriteLine($"Nama     : {member.namaLengkap}");
+                Console.WriteLine($"Membership: {member.membershipPlan.GetName()}");
+                Console.WriteLine($"Durasi   : {member.durasiLangganan} bulan");
+                Console.WriteLine($"Loker    : {(member.loker == 0 ? "-" : member.loker.ToString())}");
+                Console.WriteLine($"Status   : {(member.isAktif ? "Aktif" : "Expired")}");
                 Pause();
             }
 
             else if (c == "2")
             {
                 Console.WriteLine("== Benefit Membership ==");
-                Console.WriteLine(member.MembershipPlan.GetBenefit());
+                Console.WriteLine(member.membershipPlan.GetBenefit());
                 Pause();
             }
             else if (c == "3")
             {
                 Console.Write("Masukkan password lama: ");
                 string oldp = ReadPassword();
-                if (oldp != member.Password) { Console.WriteLine("\nPassword lama salah."); Pause(); continue; }
+                if (oldp != member.password) { Console.WriteLine("\nPassword lama salah."); Pause(); continue; }
                 Console.Write("\nMasukkan password baru: ");
                 string np = ReadPassword();
                 Console.Write("\nKonfirmasi password baru: ");
                 string np2 = ReadPassword();
                 if (np != np2) { Console.WriteLine("\nKonfirmasi tidak cocok."); Pause(); continue; }
-                member.Password = np;
+                member.password = np;
                 Console.WriteLine("\nPassword berhasil diubah.");
                 Pause();
             }
@@ -254,7 +254,7 @@ namespace GymMembershipVirtual
     {
         Console.Clear();
         Console.WriteLine("=== BELI / UPGRADE MEMBERSHIP ===");
-        Console.WriteLine($"Membership Anda saat ini: {member.MembershipPlan.GetName()}");
+        Console.WriteLine($"Membership Anda saat ini: {member.membershipPlan.GetName()}");
         Console.WriteLine();
 
         Console.WriteLine("Pilih membership baru:");
@@ -277,7 +277,7 @@ namespace GymMembershipVirtual
         }
 
         // Cek apakah membership yang dipilih sama dengan yang sekarang
-        if (newPlan.GetName() == member.MembershipPlan.GetName())
+        if (newPlan.GetName() == member.membershipPlan.GetName())
         {
             Console.WriteLine("Anda sudah menggunakan membership ini!");
             Pause();
@@ -296,16 +296,16 @@ namespace GymMembershipVirtual
         }
 
         // Ganti membership (replace)
-        member.MembershipPlan = newPlan;
+        member.membershipPlan = newPlan;
 
         // Atur nomor loker sesuai tier baru
         if (newPlan.GetName() == "Bronze")
-            member.LockerNumber = 0; // Bronze tidak punya loker eksklusif
+            member.loker = 0; // Bronze tidak punya loker eksklusif
         else
-            member.LockerNumber = new Random().Next(200, 300); // contoh loker baru
+            member.loker = new Random().Next(200, 300); // contoh loker baru
 
         Console.WriteLine($"\nMembership berhasil diganti menjadi {newPlan.GetName()}!");
-        Console.WriteLine($"Nomor loker baru: {(member.LockerNumber == 0 ? "-" : member.LockerNumber)}");
+        Console.WriteLine($"Nomor loker baru: {(member.loker == 0 ? "-" : member.loker)}");
 
         Pause();
     }

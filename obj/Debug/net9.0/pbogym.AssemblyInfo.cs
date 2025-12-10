@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("pbogym")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+587375b9627c4d0ee87547556dbb218cbdfa1e7a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7774f59bb349698955896a26424d98212046d278")]
 [assembly: System.Reflection.AssemblyProductAttribute("pbogym")]
 [assembly: System.Reflection.AssemblyTitleAttribute("pbogym")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

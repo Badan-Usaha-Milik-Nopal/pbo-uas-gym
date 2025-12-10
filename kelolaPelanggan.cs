@@ -4,45 +4,45 @@ using System.Linq;
 
 namespace GymMembershipVirtual
 {
-    class MemberManager
+    class KelolaPelanggan
     {
-        public List<Pelanggan> Members = new List<Pelanggan>();
+        public List<Pelanggan> Pelangganan = new List<Pelanggan>();
 
-        public MemberManager()
+        public KelolaPelanggan()
         {
-            SeedMembers();
+            isiPelanggan();
         }
 
-        private void SeedMembers()
+        private void isiPelanggan()
         {
-            // Seed contoh member (agar langsung bisa dicoba)
-            Members.Add(new Pelanggan ("noval", "noval123", "Noval Dwiputra",
+            // Isi contoh member (bisa lngsung coba)
+            Pelangganan.Add(new Pelanggan ("noval", "noval123", "Noval Dwiputra",
                 new GoldMembership(), 6, 101, true));
 
-            Members.Add(new Pelanggan ("kevin", "kevin123", "Kevin Santoso",
+            Pelangganan.Add(new Pelanggan ("kevin", "kevin123", "Kevin Santoso",
                 new SilverMembership(), 3, 102, true));
 
-            Members.Add(new Pelanggan("fariz", "fariz123", "Fariz Ramadhan",
+            Pelangganan.Add(new Pelanggan("fariz", "fariz123", "Fariz Ramadhan",
                 new BronzeMembership(), 1, 0, true));
         }
 
-        public Pelanggan FindByUsername(string username)
+        public Pelanggan cariUsername(string user)
         {
-            return Members.Find(m => m.Username.Equals(username, StringComparison.OrdinalIgnoreCase));
+            return Pelangganan.Find(m => m.username.Equals(user, StringComparison.OrdinalIgnoreCase));
         }
 
-        public Pelanggan FindByFullName(string name)
+        public Pelanggan cariNamaLengkap(string fullName)
         {
-            return Members.Find(m => m.FullName.Equals(name, StringComparison.OrdinalIgnoreCase));
+            return Pelangganan.Find(m => m.namaLengkap.Equals(fullName, StringComparison.OrdinalIgnoreCase));
         }
 
-        public void DeleteMember(string username)
+        public void hapusPelanggan(string user)
         {
-            var m = FindByUsername(username);
-            if (m != null) Members.Remove(m);
+            var m = cariUsername(user);
+            if (m != null) Pelangganan.Remove(m);
         }
-        
-        public void AddNewMember()
+
+        public void tambahPelanggan()
         {
             Console.Clear();
             Console.WriteLine("=== TAMBAH MEMBER BARU ===");
@@ -50,7 +50,7 @@ namespace GymMembershipVirtual
             Console.Write("Masukkan username baru: ");
             string username = Console.ReadLine();
 
-            if (FindByUsername(username) != null)
+            if (cariUsername(username) != null)
             {
                 Console.WriteLine("Username sudah digunakan!");
                 return;
@@ -92,7 +92,7 @@ namespace GymMembershipVirtual
             if (plan.GetName() != "Bronze")
                 locker = new Random().Next(200, 300);
 
-            Members.Add(new Pelanggan(username, password, fullname, plan, duration, locker, true));
+            Pelangganan.Add(new Pelanggan(username, password, fullname, plan, duration, locker, true));
 
             Console.WriteLine("\nMember baru berhasil ditambahkan!");
             Console.WriteLine($"Username : {username}");
@@ -100,68 +100,66 @@ namespace GymMembershipVirtual
             Console.WriteLine($"Locker   : {(locker == 0 ? "-" : locker)}");
         }
 
-        public int TotalMembers()
+        public int TotalPelanggan()
         {
-            return Members.Count;
+            return Pelangganan.Count;
         }
 
-        public List<Pelanggan> GetByMembershipType(string type)
+        public List<Pelanggan> cariTipeMembership(string tipe)
         {
-            return Members.Where(m => m.MembershipPlan.GetName().Equals(type, StringComparison.OrdinalIgnoreCase)).ToList();
+            return Pelangganan.Where(m => m.membershipPlan.GetName().Equals(tipe, StringComparison.OrdinalIgnoreCase)).ToList();
         }
 
-        public void ToggleActive(string username)
+        public void ToggleAktif(string user)
         {
-            var m = FindByUsername(username);
-            if (m != null) m.IsActive = !m.IsActive;
+            var m = cariUsername(user);
+            if (m != null) m.isAktif = !m.isAktif;
         }
 
-        public void PrintTableAll()
+        public void PrintTabelSemua()
         {
             Console.WriteLine(new string('-', 110));
             Console.WriteLine("| {0,-12} | {1,-8} | {2,-20} | {3,-7} | {4,-8} | {5,-12} | {6,-30} |",
-                "Username", "Tipe", "Nama Lengkap", "Durasi", "Locker", "Status", "Benefit");
+                "Username", "Tipe", "Nama Lengkap", "Durasi", "Loker", "Status", "Benefit");
             Console.WriteLine(new string('-', 110));
-            foreach (var m in Members)
+            foreach (var m in Pelangganan)
             {
                 Console.WriteLine("| {0,-12} | {1,-8} | {2,-20} | {3,6} bln | {4,6} | {5,-12} | {6,-30} |",
-                    m.Username,
-                    m.MembershipPlan.GetName(),
-                    m.FullName,
-                    m.DurationMonths,
-                    (m.LockerNumber == 0 ? "-" : m.LockerNumber.ToString()),
-                    (m.IsActive ? "Aktif" : "Expired"),
-                    Truncate(m.MembershipPlan.GetBenefit(), 30));
+                    m.username,
+                    m.membershipPlan.GetName(),
+                    m.namaLengkap,
+                    m.durasiLangganan,
+                    (m.loker == 0 ? "-" : m.loker.ToString()),
+                    (m.isAktif ? "Aktif" : "Expired"),
+                    Potong(m.membershipPlan.GetBenefit(), 30));
             }
             Console.WriteLine(new string('-', 110));
         }
 
-        public void PrintTableList(List<Pelanggan> list)
+        public void PrintTabelSatu(List<Pelanggan> list)
         {
             Console.WriteLine(new string('-', 110));
             Console.WriteLine("| {0,-12} | {1,-8} | {2,-20} | {3,-7} | {4,-8} | {5,-12} | {6,-30} |",
-                "Username", "Tipe", "Nama Lengkap", "Durasi", "Locker", "Status", "Benefit");
+                "Username", "Tipe", "Nama Lengkap", "Durasi", "Loker", "Status", "Benefit");
             Console.WriteLine(new string('-', 110));
             foreach (var m in list)
             {
                 Console.WriteLine("| {0,-12} | {1,-8} | {2,-20} | {3,6} bln | {4,6} | {5,-12} | {6,-30} |",
-                    m.Username,
-                    m.MembershipPlan.GetName(),
-                    m.FullName,
-                    m.DurationMonths,
-                    (m.LockerNumber == 0 ? "-" : m.LockerNumber.ToString()),
-                    (m.IsActive ? "Aktif" : "Expired"),
-                    Truncate(m.MembershipPlan.GetBenefit(), 30));
+                    m.username,
+                    m.membershipPlan.GetName(),
+                    m.namaLengkap,
+                    m.durasiLangganan,
+                    (m.loker == 0 ? "-" : m.loker.ToString()),
+                    (m.isAktif ? "Aktif" : "Expired"),
+                    Potong(m.membershipPlan.GetBenefit(), 30));
             }
             Console.WriteLine(new string('-', 110));
         }
 
-        private string Truncate(string s, int max)
+        private string Potong(string kata, int max)
         {
-            if (s.Length <= max) return s;
-            return s.Substring(0, max - 3) + "...";
+            if (kata.Length <= max) return kata;
+            return kata.Substring(0, max - 3) + "...";
         }
-
     }
 }
-
