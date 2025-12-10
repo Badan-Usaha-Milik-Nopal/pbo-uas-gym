@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Valtra\\Kuliah\\Politeknik Negeri Jakarta\\Semester 3\\Tugas\\Pemrograman Berbasis Object\\Project\\pbo-gym\\pbogym\\pbogym.csproj": {}
+    "D:\\Sekolah\\PNJ\\2 - Tugas\\PBO\\pbo-uas-gym\\pbogym.csproj": {}
   },
   "projects": {
-    "D:\\Valtra\\Kuliah\\Politeknik Negeri Jakarta\\Semester 3\\Tugas\\Pemrograman Berbasis Object\\Project\\pbo-gym\\pbogym\\pbogym.csproj": {
+    "D:\\Sekolah\\PNJ\\2 - Tugas\\PBO\\pbo-uas-gym\\pbogym.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Valtra\\Kuliah\\Politeknik Negeri Jakarta\\Semester 3\\Tugas\\Pemrograman Berbasis Object\\Project\\pbo-gym\\pbogym\\pbogym.csproj",
+        "projectUniqueName": "D:\\Sekolah\\PNJ\\2 - Tugas\\PBO\\pbo-uas-gym\\pbogym.csproj",
         "projectName": "pbogym",
-        "projectPath": "D:\\Valtra\\Kuliah\\Politeknik Negeri Jakarta\\Semester 3\\Tugas\\Pemrograman Berbasis Object\\Project\\pbo-gym\\pbogym\\pbogym.csproj",
-        "packagesPath": "C:\\Users\\NOVAL\\.nuget\\packages\\",
-        "outputPath": "D:\\Valtra\\Kuliah\\Politeknik Negeri Jakarta\\Semester 3\\Tugas\\Pemrograman Berbasis Object\\Project\\pbo-gym\\pbogym\\obj\\",
+        "projectPath": "D:\\Sekolah\\PNJ\\2 - Tugas\\PBO\\pbo-uas-gym\\pbogym.csproj",
+        "packagesPath": "C:\\Users\\Fariz F\\.nuget\\packages\\",
+        "outputPath": "D:\\Sekolah\\PNJ\\2 - Tugas\\PBO\\pbo-uas-gym\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\NOVAL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Fariz F\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -60,12 +60,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[9.0.11, 9.0.11]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -13,3 +13,18 @@ D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis
 D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.genruntimeconfig.cache
 D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\ref\pbogym.dll
 D:\Valtra\Kuliah\Politeknik Negeri Jakarta\Semester 3\Tugas\Pemrograman Berbasis Object\Project\pbo-gym\pbogym\obj\Debug\net9.0\pbogym.sourcelink.json
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.GeneratedMSBuildEditorConfig.editorconfig
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.AssemblyInfoInputs.cache
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.AssemblyInfo.cs
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.csproj.CoreCompileInputs.cache
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.sourcelink.json
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.dll
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\refint\pbogym.dll
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.pdb
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\bin\Debug\net9.0\pbogym.exe
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\bin\Debug\net9.0\pbogym.deps.json
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\bin\Debug\net9.0\pbogym.runtimeconfig.json
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\bin\Debug\net9.0\pbogym.dll
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\bin\Debug\net9.0\pbogym.pdb
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\pbogym.genruntimeconfig.cache
+D:\Sekolah\PNJ\2 - Tugas\PBO\pbo-uas-gym\obj\Debug\net9.0\ref\pbogym.dll
